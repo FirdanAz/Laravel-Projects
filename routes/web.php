@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Location;
+use App\Http\Controllers\LocationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/h', function () {
     return view('welcome');
 });
 
-Route::get('home', function() {
+Route::get('/home',[LocationController::class, "index"], function() {
     return view('/home.home');
+});
+Route::get('/wisata', function () {
+    return view('wisata.wisata');
 });
