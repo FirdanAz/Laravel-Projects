@@ -57,7 +57,7 @@
     <section class="container tm-home-section-1" id="more">
       <div class="row">
         <!-- start foreach -->
-         @foreach ($locations as $location)
+         @foreach ($wisatas as $location)
          <div class="col-lg-4 col-md-4 col-sm-6"> <!-- ini card -->
           <div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
             <img src="img/borobudur.jpg" alt="image" class="img-responsive" />
@@ -86,7 +86,7 @@
             <div class="col-lg-4 col-md-3 col-sm-3"><hr /></div>
           </div>
           <!-- start foreach -->
-          @foreach ($locations as $location)
+          @foreach ($wisatas as $location)
           <div class="col-lg-6">
             <div class="tm-home-box-3">
               <div class="tm-home-box-3-img-container">

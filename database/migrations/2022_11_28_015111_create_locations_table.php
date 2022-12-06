@@ -15,12 +15,9 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
+            $table->string('city');
+            $table->string('provinsi');
             $table->string('desc');
-            $table->integer('rate');
-            $table->string('price');
-            $table->string('address');
             $table->timestamps();
         });
     }

@@ -16,19 +16,18 @@
       <thead>
         <tr>
           <th scope="col">id</th>
-          <th scope="col">Nama</th>
-          <th scope="col">Kota</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Nama Kota</th>
+          <th scope="col">Provinsi</th>
+          <th scope="col">Deskripsi</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
       @foreach ($wisatas as $wisata)
-      
       <tbody>
         <tr>
           <th scope="row">{{$wisata->id}}</th>
           <td>{{$wisata->name}}</td>
-          <td>{{$wisata->location->city}}</td>
+          <td>{{$wisata->city}}</td>
           <td>{{$wisata->price}}</td>
           <td>
             <a type="button" class="btn btn-primary"  href="/wisata/detail/{{$wisata->name}}" >Detail</a>

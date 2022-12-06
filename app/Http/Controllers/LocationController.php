@@ -8,8 +8,12 @@ use App\Models\Location;
 class LocationController extends Controller
 {
     public static function index(){
-        return view('home.home', [
+        return view('city.city', [
             'locations'=>Location::all()
         ]);
+    }
+
+    public static function wisata(){
+        return $this->hasMany('App\Models\Wisata');
     }
 }

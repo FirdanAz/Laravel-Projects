@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Loacation;
+use App\Models\Wisata;
 
 class WisataSeeder extends Seeder
 {
@@ -24,7 +24,10 @@ class WisataSeeder extends Seeder
                 'desc'          =>  'Pijar Park. Salah satu destinasi baru yang ada di kota kretek ini.',
                 'rate'          =>  4,
                 'price'         =>  'Rp10.000',
-                'address'       =>  'Colo, Dawe, Kudus - Jawa Tengah - Indonesia'
+                'address'       =>  'Colo, Dawe, Kudus - Jawa Tengah - Indonesia',
+                'city_id'       =>  1,
+                'open_time'     =>  '10:30:00',
+                'close_time'    =>  '20:00:00'
             ],
 
             [
@@ -33,7 +36,10 @@ class WisataSeeder extends Seeder
                 'desc'          =>  'Diperkirakan Candi Borobudur dibangun oleh Raja Samaratungga dari Wangsa Syailendra dan baru diselesaikan putrinya, Ratu Pramudawardhani, pada abad ke-9.',
                 'rate'          =>  5,
                 'price'         =>  'Rp75.000',
-                'address'       =>  'Magelang - Jawa Tengah - Indonesia'
+                'address'       =>  'Magelang - Jawa Tengah - Indonesia',
+                'city_id'       =>  2,
+                'open_time'     =>  '07:30:00',
+                'close_time'    =>  '16:30:00'
             ],
 
             [
@@ -42,10 +48,13 @@ class WisataSeeder extends Seeder
                 'desc'          =>  'Lawang Sewu adalah gedung bersejarah milik PT Kereta Api Indonesia (Persero).',
                 'rate'          =>  4,
                 'price'         =>  'Rp100.000',
-                'address'       =>  'Semarang - Jawa Tengah - Indonesia'
+                'address'       =>  'Semarang - Jawa Tengah - Indonesia',
+                'city_id'       =>  2,
+                'open_time'     =>  '08:00:00',
+                'close_time'    =>  '17:00:00'
             ],
-        ])->each(function ($location){
-            DB::table('locations')->insert($location);
+        ])->each(function ($wisata){
+            DB::table('wisatas')->insert($wisata);
         });
     }
 }

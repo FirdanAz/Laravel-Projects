@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('wisatas', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->string('desc');
+            $table->integer('rate');
+            $table->string('price');
+            $table->string('address');
+            $table->integer('city_id');
+            $table->time('open_time');
+            $table->time('close_time');
             $table->timestamps();
         });
     }

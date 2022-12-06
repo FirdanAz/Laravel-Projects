@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Location;
+use App\Models\wisata;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\WisataController;
 
 
 /*
@@ -20,9 +22,11 @@ Route::get('/h', function () {
     return view('welcome');
 });
 
-Route::get('/home',[LocationController::class, "index"], function() {
+Route::get('/home',[WisataController::class, "index"], function() {
     return view('/home.home');
 });
-Route::get('/wisata', function () {
-    return view('wisata.wisata');
+
+Route::group(["prefix"=>"/wisata"], function(){
+    Route::get('/', [WisataController::class, 'index_wisata']);//view
+    Route::get('/detail/{wisata:name}', [WisataController::class, 'show_wisata']);//detail
 });

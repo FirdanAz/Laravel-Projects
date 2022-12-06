@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Location;
 
 class Wisata extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+    public function location(){
+        return $this->belongsTo(Location::class);
+    }
 }
