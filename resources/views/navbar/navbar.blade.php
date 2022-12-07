@@ -15,7 +15,7 @@
         <li><a href="/home">Home</a></li>
         <li><a href="/wisata">Wisata</a></li>
         <li><a href="/testimoni">Testimoni</a></li>
-        <li><a href="/kota">Kota</a></li>
+        <li><a href="/city">Kota</a></li>
       </ul>
     </nav>
   </body>

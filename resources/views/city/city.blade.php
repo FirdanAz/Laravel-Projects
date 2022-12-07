@@ -19,24 +19,24 @@
           <th scope="col">Nama Kota</th>
           <th scope="col">Provinsi</th>
           <th scope="col">Deskripsi</th>
-          <th scope="col">Aksi</th>
+          <th scope="col">Wisata</th>
         </tr>
       </thead>
-      @foreach ($wisatas as $wisata)
+      @foreach ($locations as $location)
       <tbody>
         <tr>
-          <th scope="row">{{$wisata->id}}</th>
-          <td>{{$wisata->name}}</td>
-          <td>{{$wisata->city}}</td>
-          <td>{{$wisata->price}}</td>
+          <th scope="row">{{$location->id}}</th>
+          <td>{{$location->city}}</td>
+          <td>{{$location->provinsi}}</td>
+          <td>{{$location->desc}}</td>
           <td>
-            <a type="button" class="btn btn-primary"  href="/wisata/detail/{{$wisata->name}}" >Detail</a>
-            <a type="button" class="btn btn-primary"  href="/book/edit/{{$wisata->id}}" >Edit</a>
-            <form action="/book/delete/{{ $wisata->id }}" method="post" class="d-inline">
-              @method('delete')
-              @csrf
-              <button class="btn btn-danger" onclick="return confirm('Are You Sure?')">Hapus</button>
-            </form>
+            @foreach ($location->wisata as $wisata)
+              <ul>
+                <li>
+                  {{ $wisata->name }}
+                </li>
+              </ul>
+          @endforeach
         </td>
         </tr>
       </tbody>

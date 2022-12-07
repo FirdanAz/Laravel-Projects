@@ -48,3 +48,7 @@ Route::group(["prefix"=>"/testimoni"], function(){
     Route::post('/update/{testimoni}', [TestimoniController::class, "update"]);
     Route::delete('/delete/{testimoni}', [TestimoniController::class, 'destroy']);
 });
+
+Route::group(["prefix"=>"/city"], function() {
+    Route::get('/', [LocationController::class, 'index']);
+});
