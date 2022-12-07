@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Location;
+// use App\Models\Location;
 
 class Wisata extends Model
 {
@@ -13,5 +13,13 @@ class Wisata extends Model
     protected $guarded = ['id'];
     public function location(){
         return $this->belongsTo(Location::class);
+    }
+
+    public function locations(){
+        return $this->hasMany(Location::class);
+    }
+
+    public function testimonis(){
+        return $this->belongsTo(Testimoni::class);
     }
 }

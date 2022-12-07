@@ -22,11 +22,21 @@ Route::get('/h', function () {
     return view('welcome');
 });
 
-Route::get('/home',[WisataController::class, "index"], function() {
-    return view('/home.home');
+// Route::get('/home',[WisataController::class, "index"], function() {
+//     return view('/home.home');
+// });
+
+Route::group(["prefix"=>"/home"], function(){
+    Route::get('', [WisataController::class, "index"]);
+    Route::get('/detail/{wisata:name}', [WisataController::class, 'show_location']);//detail
 });
 
 Route::group(["prefix"=>"/wisata"], function(){
     Route::get('/', [WisataController::class, 'index_wisata']);//view
     Route::get('/detail/{wisata:name}', [WisataController::class, 'show_wisata']);//detail
+    Route::get('/create', [WisataController::class, 'create']);
+    Route::post('/add', [WisataController::class, 'store']); // add data
+    Route::delete('/delete/{wisata}', [WisataController::class, 'destroy']);
+    Route::get('/edit/{wisata}', [WisataController::class, 'edit']);
+    Route::post('/update/{wisata}', [WisataController::class, 'update']);
 });

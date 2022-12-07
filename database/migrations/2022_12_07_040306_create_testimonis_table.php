@@ -13,17 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wisatas', function (Blueprint $table) {
+        Schema::create('testimonis', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->string('desc');
-            $table->integer('rate');
-            $table->string('price');
             $table->string('address');
-            $table->integer('location_id');
-            $table->time('open_time');
-            $table->time('close_time');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wisatas');
+        Schema::dropIfExists('testimonis');
     }
 };

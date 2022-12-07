@@ -60,8 +60,8 @@
          @foreach ($wisatas as $location)
          <div class="col-lg-4 col-md-4 col-sm-6"> <!-- ini card -->
           <div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
-            <img src="img/borobudur.jpg" alt="image" class="img-responsive" />
-            <a href="#">
+            <img src="img/banner-2.jpg" alt="image" class="img-responsive" />
+            <a href="/home/detail/{{$location->name}}">
               <div class="tm-grey-gradient-bg tm-city-price-container">
                 <span>{{$location->name}}</span>
                 <span>{{$location->price}}</span>
@@ -91,7 +91,7 @@
             <div class="tm-home-box-3">
               <div class="tm-home-box-3-img-container">
                 <img
-                  src="img/borobudur2.jpg"
+                  src="img/indo.png"
                   alt="image"
                   class="img-responsive"
                 />
@@ -102,7 +102,7 @@
                 </p>
                 <div class="tm-home-box-2-container">
                   <a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-                  <a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description box-3">Selengkapnya</span></a>
+                  <a href="/home/detail/{{$location->name}}" class="tm-home-box-2-link"><span class="tm-home-box-2-description box-3">Selengkapnya</span></a>
                   <a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
                 </div>
               </div>
@@ -116,15 +116,17 @@
     <div class="testimonial">
       <h1 class="tittle-testimonial">Testimonial Masyarakat</h1>
       <!-- start foreach -->
-    <figure class="snip1533">
-      <figcaption>
-        <blockquote>
-          <p>Dengan Adanya Website Ini Saya Menjadi Jauh Terbantu Karena Saya Lebih Mudah Menemukan Tempat Wisata</p>
-        </blockquote>
-        <h3>M Zumar Ramadhan</h3>
-        <h4>Warga Jateng</h4>
-      </figcaption>
-    </figure>
+      @foreach ($testimonis as $wisata)
+      <figure class="snip1533">
+        <figcaption>
+          <blockquote>
+            <p>{{$wisata->message}}</p>
+          </blockquote>
+          <h3>{{$wisata->name}}</h3>
+          <h4>{{$wisata->address}}</h4>
+        </figcaption>
+      </figure>
+      @endforeach
     <!-- end -->
     </div>
     <div class="con-contact" id="contact">

@@ -5,6 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\WisataSeeder;
+use Database\factories;
+use App\Models\Location;
+use App\Models\Testimoni;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +27,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             WisataSeeder::class
         ]);
+        $this->call([
+            LocationSeeder::class
+        ]);
+
+        Testimoni::factory(4)->create();
     }
 }

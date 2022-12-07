@@ -12,8 +12,4 @@ class LocationController extends Controller
             'locations'=>Location::all()
         ]);
     }
-
-    public static function wisata(){
-        return $this->hasMany('App\Models\Wisata');
-    }
 }

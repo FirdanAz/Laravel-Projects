@@ -25,7 +25,7 @@ class WisataSeeder extends Seeder
                 'rate'          =>  4,
                 'price'         =>  'Rp10.000',
                 'address'       =>  'Colo, Dawe, Kudus - Jawa Tengah - Indonesia',
-                'city_id'       =>  1,
+                'location_id'   =>  1,
                 'open_time'     =>  '10:30:00',
                 'close_time'    =>  '20:00:00'
             ],
@@ -37,7 +37,7 @@ class WisataSeeder extends Seeder
                 'rate'          =>  5,
                 'price'         =>  'Rp75.000',
                 'address'       =>  'Magelang - Jawa Tengah - Indonesia',
-                'city_id'       =>  2,
+                'location_id'   =>  2,
                 'open_time'     =>  '07:30:00',
                 'close_time'    =>  '16:30:00'
             ],
@@ -49,7 +49,7 @@ class WisataSeeder extends Seeder
                 'rate'          =>  4,
                 'price'         =>  'Rp100.000',
                 'address'       =>  'Semarang - Jawa Tengah - Indonesia',
-                'city_id'       =>  2,
+                'location_id'   =>  3,
                 'open_time'     =>  '08:00:00',
                 'close_time'    =>  '17:00:00'
             ],
