@@ -5,6 +5,7 @@ use App\Models\Location;
 use App\Models\wisata;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\WisataController;
+use App\Http\Controllers\TestimoniController;
 
 
 /*
@@ -39,4 +40,11 @@ Route::group(["prefix"=>"/wisata"], function(){
     Route::delete('/delete/{wisata}', [WisataController::class, 'destroy']);
     Route::get('/edit/{wisata}', [WisataController::class, 'edit']);
     Route::post('/update/{wisata}', [WisataController::class, 'update']);
+});
+
+Route::group(["prefix"=>"/testimoni"], function(){
+    Route::get('/', [TestimoniController::class, 'index']);
+    Route::get('/edit/{testimoni}', [TestimoniController::class, 'edit']);
+    Route::post('/update/{testimoni}', [TestimoniController::class, "update"]);
+    Route::delete('/delete/{testimoni}', [TestimoniController::class, 'destroy']);
 });

@@ -71,7 +71,7 @@ class WisataController extends Controller
     {
         $validateData = $request->validate([
             'name'=>'required',
-            'description'=>'required|max:255',
+            'description'=>'required',
             'desc'=>'required',
             'rate'=>'required',
             'price'=>'required',

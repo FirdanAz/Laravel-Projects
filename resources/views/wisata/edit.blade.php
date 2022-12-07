@@ -27,50 +27,50 @@
                     <h1 id="register">Tambah Data Wisata</h1>
                     <div class="all-steps" id="all-steps"> 
                       <span class="step"><i class="fa-solid fa-torii-gate"></i></span> 
-                      <span class="step"><i class="fa fa-map-marker"></i></span>
-                      <span class="step"><i class="fa-regular fa-clock"></i></span>
-                      <span class="step"><i class="fa-regular fa-clock"></i></span>
+                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
+                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
+                      <span class="step"><i class="fa-solid fa-star"></i></span>
                       <span class="step"><i class="fa-solid fa-ticket"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
+                      <span class="step"><i class="fa-solid fa-location-dot"></i></span>
+                      <span class="step"><i class="fa-solid fa-location-dot"></i></span>
+                      <span class="step"><i class="fa-regular fa-clock"></i></span>
+                      <span class="step"><i class="fa-regular fa-clock"></i></span>
                     </div>
     
                     <div class="tab">
                       <h6>Nama Wisata</h6>
                         <p>
-                          <input placeholder="Masukan Nama Wisata..." oninput="this.className = ''" name="name" class="test" required id="name" value="{{old('name', $wisata->name)}}"></p>
+                          <input type="text" placeholder="Masukan Nama Wisata..." oninput="this.className = ''" name="name" class="test" required id="name" value="{{old('name', $wisata->name)}}"></p>
                         
                     </div>
                     <div class="tab">
                         <h6>Deskripsi</h6>
                           <p>
-                            <input placeholder="Masukan Deskripsi..." oninput="this.className = ''" name="description" class="test" required id="description" value="{{old('description', $wisata->description)}}"></p>
+                            <input type="text" placeholder="Masukan Deskripsi..." oninput="this.className = ''" name="description" class="test" required id="description" value="{{old('description', $wisata->description)}}"></p>
                           
                     </div>
                     <div class="tab">
                         <h6>Deskripsi singkat</h6>
                           <p>
-                            <input placeholder="Masukan Deskripsi singkat lokasi..." oninput="this.className = ''" name="desc" class="test" required id="desc" value="{{old('desc', $wisata->desc)}}"></p>
+                            <input type="text" placeholder="Masukan Deskripsi singkat lokasi..." oninput="this.className = ''" name="desc" class="test" required id="desc" value="{{old('desc', $wisata->desc)}}"></p>
                           
                     </div>
                     <div class="tab">
                         <h6>Rating</h6>
                           <p>
-                            <input type="number" placeholder="Masukan Rating..." oninput="this.className = ''" name="rate" class="test" required id="rate" value="{{old('rate', $wisata->rate)}}"></p>
+                            <input type="text" type="number" placeholder="Masukan Rating..." oninput="this.className = ''" name="rate" class="test" required id="rate" value="{{old('rate', $wisata->rate)}}"></p>
                           
                     </div>
                     <div class="tab">
                         <h6>Harga</h6>
                           <p>
-                            <input placeholder="Masukan Harga Tiket..." oninput="this.className = ''" name="price" class="test" required id="price" value="{{old('price', $wisata->price)}}"></p>
+                            <input type="text" placeholder="Masukan Harga Tiket..." oninput="this.className = ''" name="price" class="test" required id="price" value="{{old('price', $wisata->price)}}"></p>
                           
                     </div>
                     <div class="tab">
                         <h6>Alamat</h6>
                           <p>
-                            <input placeholder="Masukan Harga Tiket..." oninput="this.className = ''" name="address" class="test" required id="address" value="{{old('address', $wisata->address)}}"></p>
+                            <input type="text" placeholder="Masukan Alamat Tiket..." oninput="this.className = ''" name="address" class="test" required id="address" value="{{old('address', $wisata->address)}}"></p>
                           
                     </div>
                     <div class="tab">

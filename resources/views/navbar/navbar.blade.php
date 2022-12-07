@@ -14,8 +14,8 @@
       <ul class="pt-5">
         <li><a href="/home">Home</a></li>
         <li><a href="/wisata">Wisata</a></li>
-        <li><a href="#">Testimoni</a></li>
-        <li><a href="#">Lokasi</a></li>
+        <li><a href="/testimoni">Testimoni</a></li>
+        <li><a href="/kota">Kota</a></li>
       </ul>
     </nav>
   </body>

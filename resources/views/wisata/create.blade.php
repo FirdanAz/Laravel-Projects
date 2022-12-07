@@ -27,14 +27,14 @@
                     <h1 id="register">Tambah Data Wisata</h1>
                     <div class="all-steps" id="all-steps"> 
                       <span class="step"><i class="fa-solid fa-torii-gate"></i></span> 
-                      <span class="step"><i class="fa fa-map-marker"></i></span>
-                      <span class="step"><i class="fa-regular fa-clock"></i></span>
-                      <span class="step"><i class="fa-regular fa-clock"></i></span>
+                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
+                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
+                      <span class="step"><i class="fa-solid fa-star"></i></span>
                       <span class="step"><i class="fa-solid fa-ticket"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
-                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
+                      <span class="step"><i class="fa-solid fa-location-dot"></i></span>
+                      <span class="step"><i class="fa-solid fa-location-dot"></i></span>
+                      <span class="step"><i class="fa-regular fa-clock"></i></span>
+                      <span class="step"><i class="fa-regular fa-clock"></i></span>
                     </div>
     
                     <div class="tab">
