@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Location;
-use App\Models\wisata;
+use App\Models\Wisata;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\WisataController;
 use App\Http\Controllers\TestimoniController;
@@ -51,4 +51,6 @@ Route::group(["prefix"=>"/testimoni"], function(){
 
 Route::group(["prefix"=>"/city"], function() {
     Route::get('/', [LocationController::class, 'index']);
+    Route::get('/create', [LocationController::class, 'create']); // add data
+    Route::post('/add', [LocationController::class, "store"]); // add data
 });
