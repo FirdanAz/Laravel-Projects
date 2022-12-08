@@ -22,7 +22,7 @@
     <div class="container mt-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-8">
-                <form method="post" action="/wisata/add">
+                <form method="post" enctype="multipart/form-data" action="/wisata/add">
                     @csrf
                     <h1 id="register">Tambah Data Wisata</h1>
                     <div class="all-steps" id="all-steps"> 
@@ -35,6 +35,7 @@
                       <span class="step"><i class="fa-solid fa-location-dot"></i></span>
                       <span class="step"><i class="fa-regular fa-clock"></i></span>
                       <span class="step"><i class="fa-regular fa-clock"></i></span>
+                      <span class="step"><i class="fa-sharp fa-solid fa-book"></i></span>
                     </div>
     
                     <div class="tab">
@@ -64,7 +65,7 @@
                     <div class="tab">
                         <h6>Harga</h6>
                           <p>
-                            <input placeholder="Masukan Harga Tiket..." oninput="this.className = ''" name="price" class="test" required id="prize"></p>
+                            <input type="number" placeholder="Masukan Harga Tiket..." oninput="this.className = ''" name="price" class="test" required id="prize"></p>
                           
                     </div>
                     <div class="tab">
@@ -92,6 +93,12 @@
                             <input type="time" placeholder="Masukan Jam Tutup..." oninput="this.className = ''" name="close_time" class="test" required id="close_time"></p>
                           
                     </div>
+                    <div class="tab">
+                      <h6>Foto</h6>
+                        <p>
+                          <input type="file" placeholder="Masukan Foto..." name="foto"></p>
+                        
+                  </div>
                     <div class="thanks-message text-center" id="text-message"> 
                         <img src="/img/verified-symbol-icon.svg" width="100" class="mb-4">
                         <h3>Data Berhasil Di Tambahkan</h3>

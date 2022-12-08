@@ -19,11 +19,12 @@ return new class extends Migration
             $table->text('description');
             $table->string('desc');
             $table->integer('rate');
-            $table->string('price');
+            $table->integer('price');
             $table->string('address');
             $table->integer('location_id');
             $table->time('open_time');
             $table->time('close_time');
+            $table->string('foto');
             $table->timestamps();
         });
     }

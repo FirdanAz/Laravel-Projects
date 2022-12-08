@@ -30,6 +30,7 @@ Route::get('/h', function () {
 Route::group(["prefix"=>"/home"], function(){
     Route::get('', [WisataController::class, "index"]);
     Route::get('/detail/{wisata:name}', [WisataController::class, 'show_location']);//detail
+    Route::post('/add', [WisataController::class, 'store_testimoni']); // add data
 });
 
 Route::group(["prefix"=>"/wisata"], function(){

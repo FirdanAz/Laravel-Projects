@@ -18,8 +18,4 @@ class Wisata extends Model
     public function locations(){
         return $this->hasMany(Location::class);
     }
-
-    public function testimonis(){
-        return $this->belongsTo(Testimoni::class);
-    }
 }

@@ -34,7 +34,7 @@
                     <div class="content">
                     <h2><i class="fa-solid fa-ticket"></i></h2>
                     <h3>Harga Tiket Masuk</h3>
-                    <p><span class="harga-tiket">{{$wisatas->price}}</span></p>
+                    <p><span class="harga-tiket">Rp.{{$wisatas->price}}</span></p>
                     </div>
                 </div>
             </div>

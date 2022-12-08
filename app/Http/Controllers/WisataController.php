@@ -41,6 +41,7 @@ class WisataController extends Controller
 
     public function store(Request $request)
     {
+
         $validateData = $request->validate([
             'name'=>'required',
             'description'=>'required|max:255',
@@ -50,8 +51,17 @@ class WisataController extends Controller
             'address'=>'required',
             'location_id'=>'required',
             'open_time'=>'required',
-            'close_time'=>'required'
+            'close_time'=>'required',
+            'foto'      =>'mimes:jpg,jpeg,png'
         ]);
+
+        // $img_name = $request->foto->getClientOriginalName() . '-' . time() . '.' . $request->foto->extension();
+        // $request->foto->move(public_path('img/image', $img_name));
+
+        if ($request->file('foto')) {
+            $validateData['foto'] = $request->file('foto')->store('images');
+        }
+
         Wisata::create($validateData);
         return redirect('/wisata')->with('success', 'Book has been added !');
     }
@@ -78,11 +88,30 @@ class WisataController extends Controller
             'address'=>'required',
             'location_id'=>'required',
             'open_time'=>'required',
-            'close_time'=>'required'
+            'close_time'=>'required',
+            'foto'      =>'mimes:jpg,jpeg,png'
         ]);
+
+        // $filename = $request->foto->getClientOriginalName();
+        // $request->foto->move(public_path('img/image', $filename));
+        
+        if ($request->file('foto')) {
+            $validateData['foto'] = $request->file('foto')->store('images');
+        }
 
         Wisata::where('id', $wisata->id)
         ->update($validateData);
         return redirect('/wisata')->with('succes', 'Data has been updated !');
+    }
+
+    public function store_testimoni(Request $request)
+    {
+        $validateData = $request->validate([
+            'name'         =>'required',
+            'address'      =>'required',
+            'message'      =>'required'
+        ]);
+        Testimoni::create($validateData);
+        return redirect('/home')->with('success', 'Book has been added !');
     }
 }

@@ -33,4 +33,6 @@ class TestimoniController extends Controller
         Testimoni::destroy($testimoni->id);
         return redirect('/testimoni')->with('success', 'Book has been deleted !');
     }
+
+    
 }

@@ -60,11 +60,11 @@
          @foreach ($wisatas as $location)
          <div class="col-lg-4 col-md-4 col-sm-6"> <!-- ini card -->
           <div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
-            <img src="img/banner-2.jpg" alt="image" class="img-responsive" />
+            <img src="{{ asset('storage/' . $location->foto) }}" alt="image" class="img-responsive" />
             <a href="/home/detail/{{$location->name}}">
               <div class="tm-grey-gradient-bg tm-city-price-container">
                 <span>{{$location->name}}</span>
-                <span>{{$location->price}}</span>
+                <span>Rp.{{$location->price}}</span>
               </div>
             </a>
           </div>
@@ -91,7 +91,7 @@
             <div class="tm-home-box-3">
               <div class="tm-home-box-3-img-container">
                 <img
-                  src="img/indo.png"
+                  src="{{ asset('storage/' . $location->foto) }}"
                   alt="image"
                   class="img-responsive"
                 />
@@ -123,7 +123,7 @@
             <p>{{$wisata->message}}</p>
           </blockquote>
           <h3>{{$wisata->name}}</h3>
-          <h4>{{$wisata->address}}</h4>
+          <h4>Warga {{$wisata->address}}</h4>
         </figcaption>
       </figure>
       @endforeach
@@ -154,16 +154,17 @@
                 <div class="app-contact-contact">CONTACT INFO : +6280000000000</div>
               </div>
               <!-- ini form -->
-                <form class="screen-body-item-contact" id="form-testi">
+                <form method="post" action="/home/add" class="screen-body-item-contact" id="form-testi">
+                  @csrf
                   <div class="app-form-contact">
                     <div class="app-form-group-contact">
-                      <input class="app-form-control-contact" placeholder="Nama Pengirim">
+                      <input name="name" class="app-form-control-contact" placeholder="Nama Pengirim">
                     </div>
                     <div class="app-form-group-contact">
-                      <input class="app-form-control-contact" placeholder="Asal Pengirim">
+                      <input name="address" class="app-form-control-contact" placeholder="Asal Pengirim">
                     </div>
                     <div class="app-form-group-contact">
-                      <input class="app-form-control-contact" placeholder="Pesan">
+                      <input name="message" class="app-form-control-contact" placeholder="Pesan">
                     </div>
                     <div class="app-form-group buttons-contact">
                       <button class="app-form-button-contact" id="cancel-testimonial">CANCEL</button>
