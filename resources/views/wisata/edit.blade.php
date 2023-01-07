@@ -99,9 +99,9 @@
                     </div>
                     <div class="tab">
                       <h6>Foto</h6>
-                        <p>
-                          <input type="file" placeholder="Masukan Foto..." oninput="this.className = ''" name="foto" required id="foto" value="{{old('foto', $wisata->foto)}}"></p>
-                        
+                      <img src="{{asset('storage/' . $wisata->foto)}}" alt="image"
+                  class="img-responsive">
+                          <input type="file" name="foto" value="{{$wisata->foto}}">
                   </div>
                     <div class="thanks-message text-center" id="text-message"> 
                         <img src="/img/verified-symbol-icon.svg" width="100" class="mb-4">

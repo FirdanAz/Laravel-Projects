@@ -8,7 +8,7 @@ use Database\Seeders\WisataSeeder;
 use Database\factories;
 use App\Models\Location;
 use App\Models\Testimoni;
-
+use App\Models\Owner;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -32,5 +32,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Testimoni::factory(4)->create();
+
+        Owner::factory(3)->create();
     }
 }

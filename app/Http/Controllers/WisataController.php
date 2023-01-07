@@ -58,8 +58,9 @@ class WisataController extends Controller
         // $img_name = $request->foto->getClientOriginalName() . '-' . time() . '.' . $request->foto->extension();
         // $request->foto->move(public_path('img/image', $img_name));
 
+        $filename = $request->foto->getClientOriginalName();
         if ($request->file('foto')) {
-            $validateData['foto'] = $request->file('foto')->store('images');
+            $validateData['foto'] = $request->file('foto')->storeAs('images/', $filename);
         }
 
         Wisata::create($validateData);
@@ -92,11 +93,11 @@ class WisataController extends Controller
             'foto'      =>'mimes:jpg,jpeg,png'
         ]);
 
-        // $filename = $request->foto->getClientOriginalName();
+        $filename = $request->foto->getClientOriginalName();
         // $request->foto->move(public_path('img/image', $filename));
         
         if ($request->file('foto')) {
-            $validateData['foto'] = $request->file('foto')->store('images');
+            $validateData['foto'] = $request->file('foto')->storeAs('images/',$filename);
         }
 
         Wisata::where('id', $wisata->id)

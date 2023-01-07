@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Location;
+use App\Models\Owner;
 
 class LocationController extends Controller
 {
@@ -22,7 +23,8 @@ class LocationController extends Controller
         $validateData = $request->validate([
             'city'      =>'required',
             'provinsi'  =>'required',
-            'desc'      =>'required'
+            'desc'      =>'required',
+            'owner_id'=>'required'
         ]);
         Location::create($validateData);
         return redirect('/city')->with('success', 'Book has been added !');
