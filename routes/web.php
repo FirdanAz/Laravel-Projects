@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Location;
 use App\Models\Wisata;
+use App\Models\Login;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\WisataController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 
 /*
@@ -54,4 +57,14 @@ Route::group(["prefix"=>"/city"], function() {
     Route::get('/', [LocationController::class, 'index']);
     Route::get('/create', [LocationController::class, 'create']); // add data
     Route::post('/add', [LocationController::class, "store"]); // add data
+});
+
+Route::group(["prefix"=>"/login"], function() {
+    Route::get('/', [LoginController::class, 'index']);
+    Route::get('/register', [LoginController::class, 'register']);
+});
+
+Route::group(["prefix"=>"/register"], function() {
+    Route::get('/', [RegisterController::class, 'index']);
+    Route::post('/create', [RegisterController::class,'create']);
 });

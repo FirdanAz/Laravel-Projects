@@ -16,6 +16,7 @@
         <li><a href="/wisata">Wisata</a></li>
         <li><a href="/testimoni">Testimoni</a></li>
         <li><a href="/city">Kota</a></li>
+        <li><a href="/login">Login</a></li>
       </ul>
     </nav>
   </body>
