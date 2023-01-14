@@ -63,6 +63,7 @@ Route::group(["prefix"=>"/login"], function() {
     Route::get('/', [LoginController::class, 'index']);
     Route::get('/register', [LoginController::class, 'register']);
     Route::post('/auth', [LoginController::class, 'auth']);
+    Route::post('/logout', [LoginController::class, 'logout']);
 });
 
 Route::group(["prefix"=>"/register"], function() {

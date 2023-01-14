@@ -16,7 +16,25 @@
         <li><a href="/wisata">Wisata</a></li>
         <li><a href="/testimoni">Testimoni</a></li>
         <li><a href="/city">Kota</a></li>
-        <li><a href="/login">Login</a></li>
+        @auth
+          <li class="nav-item dropdown">
+            <a href="" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+              Hi, {{auth()->user()->name}}
+
+            </a>
+            <form action="/login/logout" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item">
+                <li class="bi bi-box-arrow-right">Logout</li>
+              </button>
+            </form>
+          </li>
+          @else
+          <li>
+            <li><a href="/login">Login</a></li>
+          </li>
+        @endauth
       </ul>
     </nav>
   </body>
