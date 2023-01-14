@@ -14,9 +14,9 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form method="post" action="/login/">
+    <form method="post" action="/login/auth">
+      @csrf
         <h3>Masuk Akun</h3>
-        @csrf
         <label for="email">Email</label>
         <input name="email" type="text" placeholder="Email" id="email">
 
@@ -24,7 +24,7 @@
         <input name="password" type="password" placeholder="Password" id="password">
 
         <a href="/register/" class="btn-to-reg">Belum Punya Akun? klik</a> 
-        <button>LogIn</button>
+        <button type="submit">LogIn</button>
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>

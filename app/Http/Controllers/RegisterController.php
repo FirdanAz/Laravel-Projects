@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -14,13 +15,15 @@ class RegisterController extends Controller
     }
     public function create(Request $request)
     {
-        $request->validate([
+        $validateData = $request->validate([
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
         ]);
 
-        $data = User::create($request->all());
+        $validateData['password'] = Hash::make($validateData['password']);
+
+        User::create($validateData);
 
         return redirect('/home')->with('success', 'Register Success');
     }

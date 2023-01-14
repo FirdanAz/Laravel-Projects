@@ -17,10 +17,10 @@ class LoginController extends Controller
     public static function register(){
         return view('register.register');
     }
-    public function login(Request $request)
+    public function auth(Request $request)
     {
         $credentials = $request->validate([
-            'email'=>'required',
+            'email'=>'required|email:dns',
             'password'=>'required'
         ]);
 
@@ -30,5 +30,15 @@ class LoginController extends Controller
         }
 
         return back()->with('loginError', 'Login failed!');
+    }
+
+    public function logout() 
+    {
+        Auth::logout();
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect('/home');
     }
 }
