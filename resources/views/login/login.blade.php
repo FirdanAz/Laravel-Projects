@@ -14,14 +14,14 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form method="post" action="/login/">
         <h3>Masuk Akun</h3>
-
-        <label for="username">Email</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        @csrf
+        <label for="email">Email</label>
+        <input name="email" type="text" placeholder="Email" id="email">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input name="password" type="password" placeholder="Password" id="password">
 
         <a href="/register/" class="btn-to-reg">Belum Punya Akun? klik</a> 
         <button>LogIn</button>
