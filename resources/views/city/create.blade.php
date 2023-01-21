@@ -48,15 +48,6 @@
                           <p>
                             <input placeholder="Masukan Deskripsi Kota..." oninput="this.className = ''" name="desc" class="test" required id="desc"></p>
                     </div>
-                    <div class="tab">
-                      <h6>Owner</h6>
-                        <p>
-                          <select class="form-select" name="location_id" id="">
-                            @foreach ($locations as $location)
-                            <option name="location_id" value="{{ $location->id}}">{{ $location->owners->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
                     <div class="thanks-message text-center" id="text-message"> 
                         <img src="/img/verified-symbol-icon.svg" width="100" class="mb-4">
                         <h3>Data Berhasil Di Tambahkan</h3>

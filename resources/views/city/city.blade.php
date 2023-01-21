@@ -21,7 +21,6 @@
           <th scope="col">Provinsi</th>
           <th scope="col">Deskripsi</th>
           <th scope="col">Wisata</th>
-          <th scope="col">Pemilik</th>
         </tr>
       </thead>
       @foreach ($locations as $location)
