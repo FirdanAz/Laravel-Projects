@@ -24,7 +24,7 @@ class LocationController extends Controller
             'city'      =>'required',
             'provinsi'  =>'required',
             'desc'      =>'required',
-            'owner_id'=>'required'
+            'owner_id'  =>'required'
         ]);
         Location::create($validateData);
         return redirect('/city')->with('success', 'Book has been added !');

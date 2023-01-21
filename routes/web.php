@@ -9,6 +9,7 @@ use App\Http\Controllers\WisataController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -69,4 +70,8 @@ Route::group(["prefix"=>"/login"], function() {
 Route::group(["prefix"=>"/register"], function() {
     Route::get('/', [RegisterController::class, 'index']);
     Route::post('/create', [RegisterController::class,'create']);
+});
+
+Route::group(["prefix"=>"/dashboard"], function() {
+    Route::get('/', [DashboardController::class, 'index']);
 });
