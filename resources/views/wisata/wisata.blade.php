@@ -33,11 +33,11 @@
           <td>{{$wisata->price}}</td>
           <td>
             <a type="button" class="btn btn-primary"  href="/wisata/detail/{{$wisata->name}}" >Detail</a>
-            <a type="button" class="btn btn-primary"  href="/wisata/edit/{{$wisata->id}}" >Edit</a>
-            <form action="/wisata/delete/{{ $wisata->id }}" method="post" class="d-inline">
+            {{-- <a type="button" class="btn btn-primary"  href="/wisata/edit/{{$wisata->id}}" >Edit</a> --}}
+            {{-- <form action="/wisata/delete/{{ $wisata->id }}" method="post" class="d-inline"> --}}
               @method('delete')
               @csrf
-              <button class="btn btn-danger" onclick="return confirm('Are You Sure?')">Hapus</button>
+              {{-- <button class="btn btn-danger" onclick="return confirm('Are You Sure?')">Hapus</button> --}}
             </form>
         </td>
         </tr>

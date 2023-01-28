@@ -9,7 +9,7 @@ use App\Http\Controllers\WisataController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 
 /*
@@ -73,5 +73,17 @@ Route::group(["prefix"=>"/register"], function() {
 });
 
 Route::group(["prefix"=>"/dashboard"], function() {
-    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/home', function() {
+        return view('/dashboard.index');
+    })->middleware('auth');
+
+    Route::group(["prefix"=>"/wisata"], function(){
+        Route::get('/', [WisataController::class, 'index_wisata'])->middleware('auth');//view
+        Route::get('/detail/{wisata:name}', [WisataController::class, 'show_wisata'])->middleware('auth');//detail
+        Route::get('/create', [WisataController::class, 'create'])->middleware('auth');
+        Route::post('/add', [WisataController::class, 'store'])->middleware('auth'); // add data
+        Route::delete('/delete/{wisata}', [WisataController::class, 'destroy'])->middleware('auth');
+        Route::get('/edit/{wisata}', [WisataController::class, 'edit'])->middleware('auth');
+        Route::post('/update/{wisata}', [WisataController::class, 'update'])->middleware('auth');
+    });
 });

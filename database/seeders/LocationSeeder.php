@@ -20,20 +20,17 @@ class LocationSeeder extends Seeder
             [
                 'city'      =>  'Kudus',
                 'provinsi'  =>  'Jawa Tengah',
-                'desc'      =>  'Kudus Adalah Kota Kretek',
-                'owner_id'  =>  1
+                'desc'      =>  'Kudus Adalah Kota Kretek'
             ],
             [
                 'city'      =>  'Magelang',
                 'provinsi'  =>  'Jawa Tengah',
-                'desc'      =>  'Magelang Berada Di Jawa tengah',
-                'owner_id'  =>  1
+                'desc'      =>  'Magelang Berada Di Jawa tengah'
             ],
             [
                 'city'      =>  'Semarang',
                 'provinsi'  =>  'Jawa Tengah',
-                'desc'      =>  'Semarang adalah ibu kota jawa tengah',
-                'owner_id'  =>  2
+                'desc'      =>  'Semarang adalah ibu kota jawa tengah'
             ],
             
         ])->each(function ($location){

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('city');
             $table->string('provinsi');
             $table->string('desc');
-            $table->integer('owner_id');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class LocationController extends Controller
     }
     public function create(Location $location){
         return view('city.create', [
-            'location' => Location::all()
+            'locations' => Location::all()
         ]);
     }
     public function store(Request $request)
@@ -23,8 +23,7 @@ class LocationController extends Controller
         $validateData = $request->validate([
             'city'      =>'required',
             'provinsi'  =>'required',
-            'desc'      =>'required',
-            'owner_id'  =>'required'
+            'desc'      =>'required'
         ]);
         Location::create($validateData);
         return redirect('/city')->with('success', 'Book has been added !');
