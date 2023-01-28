@@ -23,12 +23,22 @@
               Hi, {{auth()->user()->name}}
 
             </a>
-            <form action="/login/logout" method="post">
-              @csrf
-              <button type="submit" class="dropdown-item">
-                <li class="bi bi-box-arrow-right">Logout</li>
-              </button>
-            </form>
+            <div class="d-flex">
+              <div>
+                <form action="/login/logout" method="post">
+                  @csrf
+                  <button type="submit" class="dropdown-item">
+                    <button type="button" class="btn btn-success">LogOut</button>
+                  </button>
+                </form>
+              </div>
+              <div>
+                <form action="/dashboard/home" method="get">
+                  @csrf
+                  <button type="button" class="btn btn-success">Dashboard</button>
+                </form>
+              </div>
+            </div>
           </li>
           @else
           <li>
