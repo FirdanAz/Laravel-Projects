@@ -3,7 +3,7 @@
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
   @if (Route::is('dashboard'))
-  <a type="button" class="btn btn-primary"  href="/wisata/create" >Tambah data</a>
+  <a type="button" class="btn btn-primary"  href="/dashboard/wisata/create" >Tambah data</a>
   @else
   
   @endif
@@ -26,17 +26,21 @@
         <td>{{$wisata->location->city}}</td>
         <td>{{$wisata->price}}</td>
         <td>
-          <a type="button" class="btn btn-primary"  href="/wisata/detail/{{$wisata->name}}" >Detail</a>
           @if (Route::is('dashboard'))
-            <a type="button" class="btn btn-primary"  href="/wisata/edit/{{$wisata->id}}" >Edit</a>
+            <a type="button" class="btn btn-primary"  href="/dashboard/wisata/detail/{{$wisata->name}}" >Detail</a>
+          @else
+            <a type="button" class="btn btn-primary"  href="/wisata/detail/{{$wisata->name}}" >Detail</a>
+          @endif
+          @if (Route::is('dashboard'))
+            <a type="button" class="btn btn-primary"  href="/dashboard/wisata/edit/{{$wisata->id}}" >Edit</a>
           @else
           
           @endif
           @if (Route::is('dashboard'))
-          <form action="/wisata/delete/{{ $wisata->id }}" method="post" class="d-inline">
+          <form action="/dashboard/wisata/delete/{{ $wisata->id }}" method="post" class="d-inline">
             @method('delete')
             @csrf
-            <button class="btn btn-danger" onclick="return confirm('Are You Sure?')">Hapus</button>
+            <button class="btn btn-danger" onclick="return confirm('Yakin Untuk Menghapus {{$wisata->name}}?')">Hapus</button>
           </form>
           @else
 

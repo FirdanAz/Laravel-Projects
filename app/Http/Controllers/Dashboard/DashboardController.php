@@ -22,6 +22,12 @@ class DashboardController extends Controller
             'wisatas'=> $wisata
         ]);
     }
+    public static function index_wisata(){
+        return view('wisata.wisata', [
+            'wisatas'=>Wisata::all(),
+        ]);
+    }
+    
     public function create(){
         return view('wisata.create', [
             'location' => Location::all()
@@ -44,21 +50,21 @@ class DashboardController extends Controller
             'foto'      =>'mimes:jpg,jpeg,png'
         ]);
 
-        // $img_name = $request->foto->getClientOriginalName() . '-' . time() . '.' . $request->foto->extension();
+        $img_name = $request->foto->getClientOriginalName() . '-' . time() . '.' . $request->foto->extension();
         // $request->foto->move(public_path('img/image', $img_name));
 
         $filename = $request->foto->getClientOriginalName();
         if ($request->file('foto')) {
-            $validateData['foto'] = $request->file('foto')->storeAs('images/', $filename);
+            $validateData['foto'] = $request->file('foto')->storeAs('image/', $filename);
         }
 
         Wisata::create($validateData);
-        return redirect('/wisata')->with('success', 'Book has been added !');
+        return redirect('/dashboard/wisata/')->with('success', 'Book has been added !');
     }
 
     public function destroy(Wisata $wisata){
         Wisata::destroy($wisata->id);
-        return redirect('/wisata')->with('success', 'Book has been deleted !');
+        return redirect('/dashboard/wisata/')->with('success', 'Book has been deleted !');
     }
 
     public function edit(Wisata $wisata){
@@ -86,22 +92,11 @@ class DashboardController extends Controller
         // $request->foto->move(public_path('img/image', $filename));
         
         if ($request->file('foto')) {
-            $validateData['foto'] = $request->file('foto')->storeAs('images/',$filename);
+            $validateData['foto'] = $request->file('foto')->storeAs('image/',$filename);
         }
 
         Wisata::where('id', $wisata->id)
         ->update($validateData);
-        return redirect('/wisata')->with('succes', 'Data has been updated !');
-    }
-
-    public function store_testimoni(Request $request)
-    {
-        $validateData = $request->validate([
-            'name'         =>'required',
-            'address'      =>'required',
-            'message'      =>'required'
-        ]);
-        Testimoni::create($validateData);
-        return redirect('/home')->with('success', 'Book has been added !');
+        return redirect('/dashboard/wisata/')->with('succes', 'Data has been updated !');
     }
 }
