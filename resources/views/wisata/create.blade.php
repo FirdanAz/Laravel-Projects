@@ -22,7 +22,7 @@
     <div class="container mt-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-8">
-                <form method="post" enctype="multipart/form-data" action="/wisata/add">
+                <form method="post" enctype="multipart/form-data" action="/dashboard/wisata/add">
                     @csrf
                     <h1 id="register">Tambah Data Wisata</h1>
                     <div class="all-steps" id="all-steps"> 
