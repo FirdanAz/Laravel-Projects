@@ -10,18 +10,20 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">id</th>
+        <th scope="col">No</th>
         <th scope="col">Nama</th>
         <th scope="col">Kota</th>
         <th scope="col">Handle</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
+    @php
+        $no = $wisatas->firstItem();
+    @endphp
     @foreach ($wisatas as $wisata)
-    
     <tbody>
       <tr>
-        <th scope="row">{{$wisata->id}}</th>
+        <th scope="row">{{$no++}}</th>
         <td>{{$wisata->name}}</td>
         <td>{{$wisata->location->city}}</td>
         <td>{{$wisata->price}}</td>
@@ -50,6 +52,11 @@
     </tbody>
     @endforeach
   </table>
+  @if (Route::is('dashboard'))
+    <div class="mt-100">{!! $wisatas->links() !!}</div>
+  @else
+      
+  @endif
 </main>
 {{-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 <!doctype html>

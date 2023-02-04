@@ -11,9 +11,10 @@ use App\Models\Testimoni;
 
 class DashboardController extends Controller
 {
+
     public static function index(){
         return view('wisata.wisata', [
-            'wisatas'=>Wisata::all(),
+            'wisatas'=>Wisata::Paginate(3),
         ]);
     }
 
@@ -27,7 +28,7 @@ class DashboardController extends Controller
             'wisatas'=>Wisata::all(),
         ]);
     }
-    
+
     public function create(){
         return view('wisata.create', [
             'location' => Location::all()
