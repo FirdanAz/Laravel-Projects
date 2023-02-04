@@ -3,11 +3,11 @@
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
   @if (Route::is('dashboard'))
-  <a type="button" class="btn btn-primary"  href="/dashboard/wisata/create" >Tambah data</a>
+  <a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
   @else
   
   @endif
-  <table class="table">
+  <table class="table mt-4">
     <thead>
       <tr>
         <th scope="col">No</th>

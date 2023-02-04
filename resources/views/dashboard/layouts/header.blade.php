@@ -6,7 +6,10 @@
     <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Sign out</a>
+        <form action="/login/logout" method="post">
+          @csrf
+            <button class="btn btn-danger mr-2" style="margin-right: 20px; margin-left: 20px;" href="#" onclick="return confirm('Yakin Ingin Keluar?')">Log Out</button>
+        </form>
       </div>
     </div>
   </header>
