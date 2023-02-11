@@ -14,7 +14,8 @@ class DashboardController extends Controller
 
     public static function index(){
         return view('wisata.wisata', [
-            'wisatas'=>Wisata::Paginate(3),
+            'location'=>Location::all(),
+            'wisatas'=>Wisata::filter(request(['search', 'location']))->Paginate(3),
         ]);
     }
 

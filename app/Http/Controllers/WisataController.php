@@ -24,7 +24,7 @@ class WisataController extends Controller
 
     public static function index_wisata(){
         return view('wisata.wisata', [
-            'wisatas'=>Wisata::all(),
+            'wisatas'=>Wisata::Paginate(3),
         ]);
     }
 
@@ -33,6 +33,8 @@ class WisataController extends Controller
             'wisatas'=> $wisata
         ]);
     }
+
+
     // public function create(){
     //     return view('wisata.create', [
     //         'location' => Location::all()

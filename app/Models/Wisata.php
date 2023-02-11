@@ -18,4 +18,21 @@ class Wisata extends Model
     public function locations(){
         return $this->hasMany(Location::class);
     }
+
+    public function scopeFilter($query, array $filters){
+        
+        $query->when($filters['search']??false, function($query, $search){
+            return $query->where('name', 'like', '%' . $search . '%')
+            ->orWhere('price', 'like', '%' . $search . '%')
+            ->orWhere('address', 'like', '%' . $search . '%');
+        });
+
+        $query->when($filters['location']??false, function($query, $category){
+            return $query->whereHas('location', function($query) use ($category){
+                $query->where('id', $category);
+            });
+        });
+    }
+
+    
 }
