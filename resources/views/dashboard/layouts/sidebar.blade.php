@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3 sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/dashboard/home/">
+        <a class="nav-link" aria-current="page" href="/dashboard/home/">
           <span data-feather="home" class="align-text-bottom"></span>
           Dashboard
         </a>
@@ -14,7 +14,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/dashboard/city/">
           <span data-feather="shopping-cart" class="align-text-bottom"></span>
           Kota
         </a>
@@ -25,12 +25,12 @@
           Testimonial
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="#">
           <span data-feather="users" class="align-text-bottom"></span>
           Logout
         </a>
-      </li>
+      </li> --}}
     </ul>
   </div>
 </nav>
