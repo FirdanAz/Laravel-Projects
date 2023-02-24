@@ -4,6 +4,28 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
   @if (Route::is('dashboard'))
   <a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
+  <div class="col-md-10">
+    <form action="/dashboard/wisata/" style="display: flex">
+      <div class="col-md-4">
+          <select class="form-select" name="location" id="">
+              <option name="location" value="0"> -- Semua Wisata--</option>
+              @foreach ($location as $item)
+              @if (request('location') == $item->id)
+                <option name="location" value="{{ $item->id }}" selected>{{ $item->city }}</option>
+              @else
+                <option name="location" value="{{ $item->id }}">{{ $item->city }}</option>
+              @endif
+              @endforeach
+          </select>
+      </div>
+      <div class="col-md-8">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request()->input('search') }}">
+              <button class="btn btn-dark" type="submit" id="search">Search</button>
+          </div>
+      </div>
+  </form>
+  </div>
   @else
   
   @endif
