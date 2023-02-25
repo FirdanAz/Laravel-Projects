@@ -57,7 +57,7 @@ class DashboardController extends Controller
 
         $filename = $request->foto->getClientOriginalName();
         if ($request->file('foto')) {
-            $validateData['foto'] = $request->file('foto')->storeAs('image/', $filename);
+            $validateData['foto'] = $request->file('foto')->storeAs('/image/', $filename);
         }
 
         Wisata::create($validateData);
