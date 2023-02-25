@@ -12,10 +12,10 @@
       <a href="" class="logoo"><span>WiTeng</span></a>
 
       <ul class="navbarr">
-          <li><a href="" class="active">Home</a></li>
-          <li><a href="">Wisata</a></li>
-          <li><a href="">Kota</a></li>
-          <li><a href="">Testimoni</a></li>
+          <li><a href="/home" class="active">Beranda</a></li>
+          <li><a href="/wisata">Wisata</a></li>
+          <li><a href="/city">Kota</a></li>
+          <li><a href="/testimoni">Testimoni</a></li>
       </ul>
 
       <div class="mainn">

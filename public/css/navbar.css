@@ -17,8 +17,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    padding: 28px 12%;
-    background: #f0f0f0;
+    padding: 15px 12%;
+    background: #0000005a;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
@@ -53,7 +53,7 @@ nav {
 }
 
 .navbarr a:hover {
-    color: #454545;
+    color: #5a4b00;
 }
 
 /* .navbarr a.active{
@@ -73,7 +73,7 @@ nav {
     font-weight: 500;
     transition: all .50s ease;
     padding: 10px 20px;
-    background: #59b5f3;
+    background: #FCDD44;
     border-radius: 7px;
     text-decoration: none;
 }

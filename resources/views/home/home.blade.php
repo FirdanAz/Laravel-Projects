@@ -113,9 +113,7 @@
         </div>
       </div>
     </section>
-    @auth
     <div class="testimonial">
-      <h1 class="tittle-testimonial">Hi {{auth()->user()->name}}, Testimonial Masyarakat</h1>
       <!-- start foreach -->
       @foreach ($testimonis as $wisata)
       <figure class="snip1533">
@@ -130,7 +128,7 @@
       @endforeach
     <!-- end -->
     </div>
-    @endauth
+    @auth
     <div class="con-contact" id="contact">
       <h1 class="tittle-contact">Berikan Testimoni</h1>
           <div class="container-contact">
@@ -179,6 +177,8 @@
           </div>
         </div>
       </div>
+    @endauth
+
     <footer class="tm-black-bg">
       <div class="container">
         <div class="row">
