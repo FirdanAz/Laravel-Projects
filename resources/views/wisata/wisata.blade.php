@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5">
   @if (Route::is('dashboard'))
   <a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
   <div class="col-md-10">
@@ -29,13 +29,18 @@
   @else
   
   @endif
-  <table class="table mt-4">
+  <table class="table" 
+  @if (Route::is('dashboard')) 
+  
+  @else
+  style="margin-top: 100px;"
+  @endif>
     <thead>
       <tr>
         <th scope="col">No</th>
         <th scope="col">Nama</th>
         <th scope="col">Kota</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Harga Tiket</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>

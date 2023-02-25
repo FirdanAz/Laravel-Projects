@@ -3,19 +3,25 @@
 <head>
   <!-- Design by foolishdeveloper.com -->
     <title>Glassmorphism login Form Tutorial in html css</title>
- 
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
 </head>
-<body>
+<body class="bg-dark">
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
     <form method="post" action="/login/auth">
       @csrf
+      @if ($errors->has('email'))
+        <div class="alert alert-danger">
+          {{ $errors->first('email') }}
+        </div>
+      @endif
         <h3>Masuk Akun</h3>
         <label for="email">Email</label>
         <input name="email" type="text" placeholder="Email" id="email">

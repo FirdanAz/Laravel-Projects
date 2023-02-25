@@ -323,8 +323,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    padding: 28px 12%;
-    background: #f0f0f0;
+    padding: 15px 12%;
+    background: #0000005a;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
@@ -337,8 +337,8 @@ nav {
 
 .logoo span {
     color: #FCDD44;
-    font-size: 2.2rem;
-    font-weight: 1000;
+    font-size: 32px;
+    font-weight: bold;
     letter-spacing: 2px;
     text-decoration: none;
 }
@@ -350,8 +350,8 @@ nav {
 
 .navbarr a {
     color: #FCDD44;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: normal;
     padding: 5px 0;
     margin: 0 30px;
     transition: all .50s ease;
@@ -359,7 +359,7 @@ nav {
 }
 
 .navbarr a:hover {
-    color: #454545;
+    color: #5a4b00;
 }
 
 /* .navbarr a.active{
@@ -375,11 +375,11 @@ nav {
     margin-right: 25px;
     margin-left: 10px;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 18px;
     font-weight: 500;
     transition: all .50s ease;
     padding: 10px 20px;
-    background: #59b5f3;
+    background: #FCDD44;
     border-radius: 7px;
     text-decoration: none;
 }
