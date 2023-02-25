@@ -84,12 +84,12 @@ Route::group(['prefix' => '/register'], function () {
 Route::group(['prefix' => '/dashboard'], function () {
     Route::get('/home', function () {
         return view('/dashboard.index');
-    })->middleware('auth');
+    })->middleware('checkauth');
 
     Route::group(['prefix' => '/wisata'], function () {
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard')
-            ->middleware('auth'); //view
+            ->middleware('checkauth'); //view
         Route::get('/detail/{wisata:name}', [
             DashboardController::class,
             'show_wisata',
@@ -148,3 +148,4 @@ Route::group(['prefix' => '/dashboard'], function () {
         ])->middleware('auth'); // add data
     });
 });
+
