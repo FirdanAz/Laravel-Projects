@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DashboardCityController;
+use App\Http\Controllers\Dashboard\DashboardTestimoniController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,27 +118,32 @@ Route::group(['prefix' => '/dashboard'], function () {
 
     Route::group(['prefix' => '/testimoni'], function () {
         Route::get('/', [
-            DashboardController::class,
-            'index_testimoni',
-        ])->middleware('auth');
+            DashboardTestimoniController::class,
+            'index',
+        ])
+        ->name('dashboard')
+        ->middleware('checkauth');
         Route::get('/edit/{testimoni}', [
-            DashboardController::class,
-            'edit_testimoni',
+            DashboardTestimoniController::class,
+            'edit',
         ])->middleware('auth');
         Route::post('/update/{testimoni}', [
-            DashboardController::class,
-            'update_testimoni',
+            DashboardTestimoniController::class,
+            'update',
         ])->middleware('auth');
         Route::delete('/delete/{testimoni}', [
-            DashboardController::class,
-            'destroy_testimoni',
+            DashboardTestimoniController::class,
+            'destroy',
+        ])->middleware('auth');
+        Route::post('/add', [
+            WisataController::class, 'store_testimoni'
         ])->middleware('auth');
     });
 
     Route::group(['prefix' => '/city'], function () {
         Route::get('/', [DashboardCityController::class, 'index_location'])
             ->name('dashboard')
-            ->middleware('auth');
+            ->middleware('checkauth');
         Route::get('/create', [
             DashboardCityController::class,
             'create_location',

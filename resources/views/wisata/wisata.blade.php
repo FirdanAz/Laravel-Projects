@@ -1,7 +1,11 @@
 @extends('layout.main')
 
 @section('content')
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5">
+<main @if (Route::is('dashboard'))
+    class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5"
+@else
+    
+@endif>
   @if (Route::is('dashboard'))
   <a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
   <div class="col-md-10">

@@ -1,10 +1,25 @@
 @extends('layout.main')
 
 @section('content')
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main @if (Route::is('dashboard'))
+    class="col-md-9 ms-sm-auto col-lg-10 px-md-4"
+@else
+    
+@endif>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <a type="button" class="btn btn-primary mt-3"  href="/city/create" >Tambah Kota</a>
-  <table class="table" style="margin-top: 100px;">
+  @if (Route::is('dashboard'))
+    <a type="button" class="btn btn-primary mt-3"  href="/city/create" >Tambah Kota</a>
+  @else
+      
+  @endif
+
+  <table class="table" 
+    @if (Route::is('dashboard'))
+        style="margin-top: 10px;"
+    @else
+      style="margin-top: 100px;"
+    @endif
+  >
     <thead>
       <tr>
         <th scope="col">id</th>

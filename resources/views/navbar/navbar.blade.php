@@ -18,10 +18,25 @@
           <li><a href="/testimoni">Testimoni</a></li>
       </ul>
 
+      @auth
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(237, 221, 0); height: 40px; font-size: 13px">
+            Hi, {{auth()->user()->name}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/dashboard/home" style="color: black; font-size: 12px">Dashboard</a></li>
+            <form action="/login/logout" method="post">
+              @csrf
+              <li style=" margin-left: 10px"><button type="submit" class="dropdown-item" style="color: red; font-size: 12px;">Logout</button></li></form>
+          </ul>
+        </div>
+      @else
       <div class="mainn">
-          <a href="" class="userr">Login</a>
-          <div class="bx bx-menu" id="menu-icon"></div>
-      </div>
+        <a href="/login" class="userr">Login</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+    @endauth
+      
   </nav>
   </body>
 </html>
