@@ -2,15 +2,15 @@
 
 @section('content')
 <main @if (Route::is('dashboard'))
-    class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5"
+    class="col-md-9 ms-sm-auto col-lg-10 px-md-4"
 @else
     
 @endif>
   @if (Route::is('dashboard'))
   <a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
-  <div class="col-md-10">
-    <form action="/dashboard/wisata/" style="display: flex">
-      <div class="col-md-4">
+  <div class="col-md-10 mt-3">
+    <form action="/dashboard/wisata/" style="display: flex;">
+      <div class="col-md-4" style="margin-right: 20px;">
           <select class="form-select" name="location" id="">
               <option name="location" value="0"> -- Semua Wisata--</option>
               @foreach ($location as $item)
@@ -37,7 +37,7 @@
   @if (Route::is('dashboard')) 
   
   @else
-  style="margin-top: 100px;"
+  style="margin-top: 60px;"
   @endif>
     <thead>
       <tr>
