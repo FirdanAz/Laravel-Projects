@@ -6,38 +6,75 @@
 @else
     
 @endif>
+@if (Route::is('dashboard'))
+<a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
+@else
+    
+@endif
+@if (Route::is('dashboard'))
+<div class="col-md-10 mt-3">
+  <form 
   @if (Route::is('dashboard'))
-  <a type="button" class="btn btn-primary mt-3"  href="/dashboard/wisata/create" >Tambah data</a>
-  <div class="col-md-10 mt-3">
-    <form action="/dashboard/wisata/" style="display: flex;">
-      <div class="col-md-4" style="margin-right: 20px;">
-          <select class="form-select" name="location" id="">
-              <option name="location" value="0"> -- Semua Wisata--</option>
-              @foreach ($location as $item)
-              @if (request('location') == $item->id)
-                <option name="location" value="{{ $item->id }}" selected>{{ $item->city }}</option>
-              @else
-                <option name="location" value="{{ $item->id }}">{{ $item->city }}</option>
-              @endif
-              @endforeach
-          </select>
-      </div>
-      <div class="col-md-8">
-          <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request()->input('search') }}">
-              <button class="btn btn-dark" type="submit" id="search">Search</button>
-          </div>
-      </div>
-  </form>
-  </div>
+      action="/dashboard/wisata/"
   @else
-  
+      action="/wisata/"
   @endif
-  <table class="table" 
+   style="display: flex;">
+    <div class="col-md-4" style="margin-right: 20px;">
+        <select class="form-select" name="location" id="">
+            <option name="location" value="0"> -- Semua Wisata--</option>
+            @foreach ($location as $item)
+            @if (request('location') == $item->id)
+              <option name="location" value="{{ $item->id }}" selected>{{ $item->city }}</option>
+            @else
+              <option name="location" value="{{ $item->id }}">{{ $item->city }}</option>
+            @endif
+            @endforeach
+        </select>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request()->input('search') }}">
+            <button class="btn btn-dark" type="submit" id="search">Search</button>
+        </div>
+    </div>
+</form>
+</div>
+@else
+<div class="col-md-10 mt-3">
+  <form 
+  @if (Route::is('dashboard'))
+      action="/dashboard/wisata/"
+  @else
+      action="/wisata/"
+  @endif
+   style="display: flex; margin-top: 100px">
+    <div class="col-md-4" style="margin-right: 20px;">
+        <select class="form-select" name="location" id="">
+            <option name="location" value="0"> -- Semua Wisata--</option>
+            @foreach ($location as $item)
+            @if (request('location') == $item->id)
+              <option name="location" value="{{ $item->id }}" selected>{{ $item->city }}</option>
+            @else
+              <option name="location" value="{{ $item->id }}">{{ $item->city }}</option>
+            @endif
+            @endforeach
+        </select>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request()->input('search') }}">
+            <button class="btn btn-dark" type="submit" id="search">Search</button>
+        </div>
+    </div>
+</form>
+</div>
+@endif
+  <table class="table"
   @if (Route::is('dashboard')) 
   
   @else
-  style="margin-top: 60px;"
+  style="margin-top: 5px;"
   @endif>
     <thead>
       <tr>
@@ -88,6 +125,14 @@
   @else
       
   @endif
+
+  @if ($wisatas->count()>0)
+            
+        @else
+            <div class="alert alert-danger">
+              Data tidak ditemukan
+            </div>
+        @endif
 </main>
 {{-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 <!doctype html>

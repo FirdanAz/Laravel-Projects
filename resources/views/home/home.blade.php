@@ -37,7 +37,7 @@
               <p class="tm-banner-subtitle">For Your Holidays</p>
               <a href="#more" class="tm-banner-link">Learn More</a>
             </div>
-            <img src="img/banner-1.jpg" alt="Image" />
+            <img src="img/banner-2.jpg" alt="Image" />
           </li>
           <li>
             <div class="tm-banner-inner">

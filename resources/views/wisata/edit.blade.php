@@ -96,8 +96,14 @@
                     </div>
                     <div class="tab">
                       <h6>Foto</h6>
-                      <img src="{{asset('storage/' . $wisata->foto)}}" alt="image"
-                  class="img-responsive">
+                      <div class="deskripsi-detail" >
+                        <div class="con-desk">
+                            <div class="gambar-desc">
+                                <img src="{{asset('storage/' . $wisata->foto)}}" alt="" class="img-deskripsi" width="800px">
+                            </div>
+                        </div>
+                        
+                    </div>
                           <input type="file" name="foto" value="{{$wisata->foto}}">
                   </div>
                     <div class="thanks-message text-center" id="text-message"> 

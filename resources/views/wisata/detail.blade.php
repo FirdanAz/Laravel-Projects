@@ -55,7 +55,7 @@
         <h1 class="tittle-deskripsi">Wisata <span class="kota-tujuan">{{$wisatas->name}}</span></h1>
         <div class="con-desk">
             <div class="gambar-desc">
-                <img src="./img/Jalan-Malioboro-Jogja.jpg" alt="" class="img-deskripsi">
+                <img src="{{asset('storage/' . $wisatas->foto)}}" alt="" class="img-deskripsi">
             </div>
             <p class="text-deskripsi">{{$wisatas->description}}</p>
         </div>

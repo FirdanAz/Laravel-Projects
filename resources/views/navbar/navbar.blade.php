@@ -9,7 +9,7 @@
   </head>
   <body>
     <nav>
-      <a href="" class="logoo"><span>WiTeng</span></a>
+      <a href="" class="logoo"><span>Jawa Tengah</span></a>
 
       <ul class="navbarr">
           <li><a href="/home" class="active">Beranda</a></li>
